@@ -1,0 +1,54 @@
+function horaExata(){
+    const naoEhNulo = document.body;
+    const data = new Date();
+    const horas = data.getHours().toString().padStart(2, "0");
+    const minutos = data.getMinutes().toString().padStart(2, "0");
+    const segundos = data.getSeconds().toString().padStart(2, "0");
+    naoEhNulo.textContent = `Agora são exatamante ${horas}:${minutos}:${segundos}!`;
+    if(horas < 6){
+        document.writeln(`<h1>Boa madrugada! ${horas}:${minutos}:${segundos}</h1>`);
+        document.body.style.backgroundImage = "url('./boa_madrugada.jpg')";
+        document.body.style.backgroundPosition = "center";
+        document.body.style.backgroundRepeat = "repeat";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.color = "white";
+        document.body.style.fontVariant = "small-caps";
+        document.body.style.width = "100vw";
+        document.body.style.height = "100vh";
+    }            
+    if(horas >= 6 && horas < 12){
+        document.writeln(`<h1>Bom dia! ${horas}:${minutos}:${segundos}</h1>`);
+        document.body.style.backgroundImage = "url('./bom_dia.jpg')";
+        document.body.style.backgroundPosition = "center";
+        document.body.style.backgroundRepeat = "repeat";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.color = "white";
+        document.body.style.fontVariant = "small-caps";
+        document.body.style.width = "100vw";
+        document.body.style.height = "100vh";
+    }
+    if(horas >= 12 && horas < 18){
+        document.writeln(`<h1>Boa tarde! ${horas}:${minutos}:${segundos}</h1>`);
+        document.body.style.backgroundImage = "url('./boa_tarde.jpg')";
+        document.body.style.backgroundPosition = "center";
+        document.body.style.backgroundRepeat = "repeat";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.color = "white";
+        document.body.style.fontVariant = "small-caps";
+        document.body.style.width = "100vw";
+        document.body.style.height = "100vh";
+    }
+    if(horas >= 18 && horas < 24){
+        document.writeln(`<h1>Boa noite! ${horas}:${minutos}:${segundos}</h1>`);
+        document.body.style.backgroundImage = "url('./boa_noite.jpg')";
+        document.body.style.backgroundPosition = "center";
+        document.body.style.backgroundRepeat = "repeat";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.color = "white";
+        document.body.style.fontVariant = "small-caps";
+        document.body.style.width = "100vw";
+        document.body.style.height = "100vh";
+    }
+}
+setInterval(horaExata, 1000);
+horaExata();
